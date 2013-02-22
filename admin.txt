@@ -1,0 +1,29 @@
+<?php
+class Admin extends CI_Controller{
+    
+    function __construct() {
+        parent::__construct();
+    }
+    
+    function index()
+    {
+        $session=isset ($_SESSION['admin_perpustakaan']) ? $_SESSION['admin_perpustakaan']:'';
+        if($session!=""){
+            if($data["lvl"]=="spradmn")
+            {
+                $data["judul"] = "";
+                $this->load->view('admin/home',$data);
+            }
+        }
+        else{
+            echo "<meta http-equiv='refresh' content='0; url=".base_url()."admin/login_view'>";
+        }
+    }
+    
+    function login()
+    {
+        echo "<meta http-equiv='refresh' content='0; url=".base_url()."admin'>";
+	$this->load->view('admin/login_view');
+    }
+}
+?>

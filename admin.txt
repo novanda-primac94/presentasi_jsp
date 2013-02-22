@@ -20,7 +20,7 @@ class Admin extends CI_Controller{
         }
     }
     
-    function login()
+    function masuk()
     {
         echo "<meta http-equiv='refresh' content='0; url=".base_url()."admin'>";
 	$this->load->view('admin/login_view');
